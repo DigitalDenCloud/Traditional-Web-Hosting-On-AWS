@@ -57,3 +57,46 @@
     animation-iteration-count: infinite;
   }
   
+  .timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 0;
+    width: 2px;
+    background-color: #ccc;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .timeline-content {
+    position: relative;
+    margin-left: 40px;
+    width: 260px; /* Adjust the width as per your requirements */
+  }
+  
+  .timeline-title {
+    margin-top: 0;
+    position: relative;
+  }
+  
+  .timeline-description {
+    margin-bottom: 10px;
+  }
+  
+  .timeline-date {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .timeline-item.left .timeline-content {
+    margin-left: -280px; /* Adjust the distance from the timeline line */
+    margin-right: 40px;
+  }
+  
+  /* Style the last timeline item */
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  
