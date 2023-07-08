@@ -15,7 +15,8 @@
 
 ### Project date
 ------------------
-TBC
+Deployed via Management Console - TBC
+Deployed via Terraform - TBC
 
 ### Tech Stack
 ------------------
@@ -35,6 +36,7 @@ This project explores the traditional technologies, especially focused on the ne
 ### Objectives
 -----------------
 - [X] Deploy AWS networking components. Create a VPC to logically separate all deployed AWS resources. Within the VPC, create multiple Subnets. Create one for each Availability Zone in the Region. Create a NAT gateway in the Public Subnet in the first and second Availability Zone. Configure the network to send internet-bound traffic from instances in Private Subnets to the NAT gateway. Create an Internet Gateway and attach to VPC. Configure Route Tables and add a route to direct internet-bound traffic (0.0.0.0/0) to the internet gateway. Edit subnet associations. Creating a security group for the Web Server and configure it to permit HTTP (port 80) traffic that comes from anywhere on the internet (0.0.0.0/0).
+
 - [ ] Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
 - [ ] Install a web server using the user_data property on the EC2 instance, invoke yum to download httpd (Apache). 
 - [ ] Configure high availability by using duplicate EC2 instances in multiple Availability Zones in the same Region. Route traffic from the internet across each of the EC2 instances by using an Application Load Balancer.
