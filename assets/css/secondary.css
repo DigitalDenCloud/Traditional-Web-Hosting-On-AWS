@@ -58,45 +58,157 @@
   }
   
   .timeline {
+    --tl-line-padding: 20px;
+    --tl-bullet-size: 8px;
+    --tl-line-size: 4px;
+    --tl-left-col-size: 70px;
+    --tl-line-color: rgb(85, 85, 85);
+    --tl-bullet-color: rgb(180, 180, 180);
+    --tl-bullet-padding: 1rem;
+    --tl-line-height: 1.25rem;
+    --tl-title-color: rgb(175, 191, 255);
+    --tl-bullet-shadow: 0 0 5px var(--tl-line-color);
+    --tl-border: var(--tl-line-size) solid var(--tl-line-color);
+  }
+  
+  @media screen and (width < 450px) {
+    .timeline {
+      --tl-left-col-size: 60px;
+    }
+  }
+  
+  .tl-year-outer {
+    display: flex;
+  }
+  
+  .tl-year-outer.first {
+    margin-top: 50px;
+  }
+  
+  .tl-year-outer:not(.first) .tl-year {
+    padding-top: 40px;
+  }
+  
+  .tl-year-outer:not(.first) .tl-year::after {
+    top: 40px;
+  }
+  
+  .tl-year {
+    width: var(--tl-left-col-size);
+    padding-right: var(--tl-line-padding);
     position: relative;
-    margin: 50px auto;
+  }
+  
+  .tl-year-linebox {
+    border-left: var(--tl-border);
+  }
+  
+  .tl-year::after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: var(--tl-line-color);
+    border: 3.5px solid var(--tl-bullet-color);
+    border-radius: 99px;
+    position: absolute;
+    top: 0;
+    right: calc(-1 * var(--tl-line-size) / 2);
+    transform: translate(50%, -50%);
+  }
+  
+  .tl-year h2 {
+    letter-spacing: normal;
+    margin: 0;
+    font-weight: 400;
+    color: var(--tl-bullet-color);
+    transform: translateY(-50%);
+  }
+  
+  .tl-list {
+    margin: 0;
     padding: 0;
-    width: 2px;
-    background-color: #ccc;
   }
   
-  .timeline-item {
+  .tl-bullet {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tl-bullet:nth-of-type(odd) {
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent)
+  }
+  
+  .tl-date {
+    width: var(--tl-left-col-size);
+    padding-right: var(--tl-line-padding);
+    padding-top: var(--tl-bullet-padding);
+    padding-bottom: var(--tl-bullet-padding);
     position: relative;
-    margin-bottom: 50px;
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+    font-weight: 400;
+    height: fit-content;
   }
   
-  .timeline-content {
-    position: relative;
-    margin-left: 40px;
-    width: 260px; /* Adjust the width as per your requirements */
+  .tl-date::after {
+    content: "";
+    width: var(--tl-bullet-size);
+    height: var(--tl-bullet-size);
+    border-radius: 99px;
+    background-color: var(--tl-bullet-color);
+    box-shadow: var(--tl-bullet-shadow);
+    position: absolute;
+    right: calc(-1 * var(--tl-line-size) / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
   }
   
-  .timeline-title {
-    margin-top: 0;
-    position: relative;
+  .tl-date > span {
+    line-height: var(--tl-line-height);
   }
   
-  .timeline-description {
-    margin-bottom: 10px;
+  .tl-date > span:first-of-type {
+    color: var(--tl-bullet-color);
   }
   
-  .timeline-date {
-    font-size: 14px;
-    color: #999;
+  .tl-date > span:last-of-type {
+    color: var(--tl-line-color);
   }
   
-  .timeline-item.left .timeline-content {
-    margin-left: -280px; /* Adjust the distance from the timeline line */
-    margin-right: 40px;
+  .tl-info {
+    flex: 1;
+    padding-left: var(--tl-line-padding);
+    padding-top: var(--tl-bullet-padding);
+    padding-bottom: var(--tl-bullet-padding);
+    border-left: var(--tl-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
-  /* Style the last timeline item */
-  .timeline-item:last-child {
-    margin-bottom: 0;
+  .tl-info > * {
+    margin: 0;
   }
   
+  .tl-info a {
+    line-height: var(--tl-line-height);
+    font-size: 1rem;
+    letter-spacing: normal;
+    text-transform: none;
+    border: none;
+    color: var(--tl-title-color);
+    text-decoration: underline var(--tl-line-color);
+    font-weight: 400;
+  }
+  
+  .tl-info a:visited {
+    color: var(--tl-title-color);
+  }
+  
+  .tl-info p {
+    line-height: 1.25em;
+    color: var(--tl-bullet-color);
+  }
