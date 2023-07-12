@@ -36,8 +36,7 @@ This project explores the traditional technologies, especially focused on the ne
 ### Objectives
 -----------------
 
-Part 1:
-- [X] Deploy a new VPC to logically separate all deployed AWS resources.
+Part 1: Deploy a new VPC to logically separate all deployed AWS resources.
 - [X] Create Public and Private Subnets in two Availability Zones.
 - [X] Create an Internet Gateway and attach to VPC.
 - [X] Create a Network Address Translation (NAT) gateway in both of the public subnets for high availability.
@@ -48,7 +47,7 @@ Part 1:
 - [X] Launching a Test Instance in the Public Subnet to test VPC is configured correctly.
 - [X] Confirm that the EC2 instance can be accessed from the internet.
 
-Part 2:
+Part 2: Creating a Scalable and Highly Available Environment for the Web Server
 - [ ] Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
 - [ ] Install a web server using the user_data property on the EC2 instance, invoke yum to download httpd (Apache). 
 - [ ] Configure high availability by using duplicate EC2 instances in multiple Availability Zones in the same Region. Route traffic from the internet across each of the EC2 instances by using an Application Load Balancer.
