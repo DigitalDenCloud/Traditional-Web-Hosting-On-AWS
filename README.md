@@ -15,8 +15,8 @@
 
 ### Project date
 ------------------
-Deployed via Management Console - TBC
-Deployed via Terraform - TBC
+- Deployed via Management Console - TBC
+- Deployed via Terraform - TBC
 
 ### Tech Stack
 ------------------
@@ -38,15 +38,15 @@ This project explores the traditional technologies, especially focused on the ne
 
 Part 1:
 - [X] Deploy a new VPC to logically separate all deployed AWS resources.
-- Create Public and Private Subnets in two Availability Zones.
-- Create an Internet Gateway and attach to VPC.
-- Create a Network Address Translation (NAT) gateway in both of the public subnets for high availability.
-- Configure the network to send internet-bound traffic from instances in Private Subnets to the NAT gateway.
-- Configure Route Tables and add a route to direct internet-bound traffic (0.0.0.0/0) to the internet gateway.
-- Edit subnet associations. 
-- Creating a Security Group for the Test Server and configure it to permit HTTP (port 80) traffic that comes from anywhere on the internet (0.0.0.0/0).
-- Launching a Test Instance in the Public Subnet to test VPC is configured correctly.
-- Confirm that the EC2 instance can be accessed from the internet.
+- [X] Create Public and Private Subnets in two Availability Zones.
+- [X] Create an Internet Gateway and attach to VPC.
+- [X] Create a Network Address Translation (NAT) gateway in both of the public subnets for high availability.
+- [X] Configure the network to send internet-bound traffic from instances in Private Subnets to the NAT gateway.
+- [X] Configure Route Tables and add a route to direct internet-bound traffic (0.0.0.0/0) to the internet gateway.
+- [X] Edit subnet associations. 
+- [X] Creating a Security Group for the Test Server and configure it to permit HTTP (port 80) traffic that comes from anywhere on the internet (0.0.0.0/0).
+- [X] Launching a Test Instance in the Public Subnet to test VPC is configured correctly.
+- [X] Confirm that the EC2 instance can be accessed from the internet.
 
 Part 2:
 - [ ] Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
