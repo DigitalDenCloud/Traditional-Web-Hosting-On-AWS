@@ -1,4 +1,5 @@
 <br />
+
 ![Architecture Diagram](images/part2-architecture.png)
   <h1 align="center">Traditional-Web-Hosting-On-AWS</h1>
   <p align="center">
@@ -6,17 +7,6 @@
     Building and Scaling a Traditional Web Hosting Architecture on AWS with EC2, VPC, Load Balancing, Auto Scaling, and Networking.
   </p>
 </p>
-
-### More Information
-------------------
-
-Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
-- [Blog](https://awstip.com/traditional-web-hosting-on-aws-3d2f1fc4524a)
-- [Lab](https://www.youtube.com/watch?v=wdHhvifXs14&t=1200s)
-
-Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of your application
-- Blog (coming soon)
-- Lab (coming soon)
 
 ### Project date
 ------------------
@@ -31,12 +21,22 @@ Part 2: Load Balancing and Automatic Scaling To further enhance the availability
 - Amazon Route 53
 - Auto Scaling
 
-
 ### Project Description
 -----------------
 Many companies utilize a number of traditional technologies within AWS to deliver applications, most of which are less managed than the serverless technologies. These include Elastic Cloud Compute (EC2), which provides virtual machines in AWS, and Virtual Private Cloud (VPC), which provides virtual networking constructs in AWS.
 
 This project explores the traditional technologies, especially focused on the networking stacks within AWS.
+
+### More Information
+------------------
+
+Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
+- [Blog](https://awstip.com/traditional-web-hosting-on-aws-3d2f1fc4524a)
+- [Lab](https://www.youtube.com/watch?v=wdHhvifXs14&t=1200s)
+
+Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my application.
+- Blog (coming soon)
+- Lab (coming soon)
 
 ### Objectives
 -----------------
