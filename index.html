@@ -9,6 +9,8 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+	<body onload="updateCounter()">
+		<div class="overlay"></div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -519,7 +521,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright"><span id="hits"></span></span><br> deniz@digitalden.cloud </p>
+						<p class="copyright">Visits:<span id="hits"></span></span><br> deniz@digitalden.cloud </p>
 						<!--<p class="copyright">&copy; <a href="https://digitalden.cloud">www.digitalden.cloud</a></p>-->
 					</footer>
 
@@ -534,6 +536,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/counter.js"></script>
 
 	</body>
 </html>
