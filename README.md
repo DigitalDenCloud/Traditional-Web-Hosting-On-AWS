@@ -55,13 +55,14 @@ Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
 - [X] Launch a Web Server EC2 Instance in the Public Subnet to test VPC is configured correctly.
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
-Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of your application
-- [ ] Create an Application Load Balancer
-
-Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
-- [ ] Install a web server using the user_data property on the EC2 instance, invoke yum to download httpd (Apache). 
-- [ ] Configure high availability by using duplicate EC2 instances in multiple Availability Zones in the same Region. Route traffic from the internet across each of the EC2 instances by using an Application Load Balancer.
-- [ ] Setup Auto Scaling with EC2 Auto Scaling with at least two instances. Use CPU Utilization as the scaling metric. Attach Application Load Balancer to the Auto Scaling Group.
-- [ ] Secure networking by moving EC2 instances to a private subnet in VPC. A private subnet is defined as one that does not have a NAT Gateway in it, so it cannot reach the public internet. Lock down EC2 instance’s Security Groups to only allow traffic from the Application Load Balancer.
-- [ ] Allow web server to communicate with the internet. Update network stack to create public subnets with NAT Gateways and route table rules to allow traffic from private subnets to the public subnets.
-- [ ] Point DNS Application Load Balancer.
+Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
+- [X] Create an Application Load Balancer in Web Server VPC in both Public Subnets. Create a new security group to enable web access to load balancer. Assign the security group to the load balancer. Create a target group. Configure the HTTP listener on port 80 to forward incoming traffic to the specified target group.
+- [X] Launch an EC2 instance utilising the user_data property to deploy website on an Apache Web Server.
+- [X] Create an AMI for Auto Scaling from the existing Web Server.
+- [X] Create a Launch Template.
+- [X] Setup Auto Scaling that uses the launch template and deploys EC2 instances across private subnets. Attach ALB to the ASG Configure group size and target tracking scaling policy with CPU Utilization as the scaling metric. Add tags.
+- [X] Update Web Server Security Group. Lock down EC2 instance’s Security Groups to only allow traffic from the Application Load Balancer.
+- [X] Test the Web Server by connecting to the load balancer.
+- [X] Test high availability by terminating one of the Web Server instances to simulate a failure.
+- [x] Connect to an EC2 Instance in a Private Subnet using EC2 Instance Connect Endpoint.
+- [X] Test automatic scaling under load. Start a stress test on the Web Server CPU.
