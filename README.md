@@ -41,7 +41,8 @@ Part 2: Load Balancing and Automatic Scaling To further enhance the availability
 ### Objectives
 -----------------
 
-Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
+### Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
+
 
 ![Part 1 Architecture](images/part1-architecture.png)
 
@@ -55,7 +56,8 @@ Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
 - [X] Launch a Web Server EC2 Instance in the Public Subnet to test VPC is configured correctly.
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
-Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
+### Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
+
 - [X] Create an Application Load Balancer in Web Server VPC in Public Subnets 1 and Public Subnet 2. Create a new security group to enable web access to the load balancer. Assign the security group to the load balancer. Create a target group. Configure the HTTP listener on port 80 to forward incoming traffic to the specified target group.
 - [X] Launch an EC2 instance utilising the user_data property to deploy website on an Apache Web Server.
 - [X] Create an AMI for Auto Scaling from the existing Web Server.
