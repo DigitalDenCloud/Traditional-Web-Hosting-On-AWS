@@ -56,7 +56,9 @@ Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
 Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of your application
-- [ ] Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
+- [ ] Create an Application Load Balancer
+
+Create an EC2 instance based on an Amazon Linux 2 AMI from AWS. Make the instance publicly accessible to the internet. Ensure EC2 instance only allows HTTP (and, optionally, HTTPS) traffic from the public internet.
 - [ ] Install a web server using the user_data property on the EC2 instance, invoke yum to download httpd (Apache). 
 - [ ] Configure high availability by using duplicate EC2 instances in multiple Availability Zones in the same Region. Route traffic from the internet across each of the EC2 instances by using an Application Load Balancer.
 - [ ] Setup Auto Scaling with EC2 Auto Scaling with at least two instances. Use CPU Utilization as the scaling metric. Attach Application Load Balancer to the Auto Scaling Group.
