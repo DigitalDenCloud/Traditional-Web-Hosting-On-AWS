@@ -56,11 +56,11 @@ Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
 Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
-- [X] Create an Application Load Balancer in Web Server VPC in both Public Subnets. Create a new security group to enable web access to load balancer. Assign the security group to the load balancer. Create a target group. Configure the HTTP listener on port 80 to forward incoming traffic to the specified target group.
+- [X] Create an Application Load Balancer in Web Server VPC in Public Subnets 1 and Public Subnet 2. Create a new security group to enable web access to the load balancer. Assign the security group to the load balancer. Create a target group. Configure the HTTP listener on port 80 to forward incoming traffic to the specified target group.
 - [X] Launch an EC2 instance utilising the user_data property to deploy website on an Apache Web Server.
 - [X] Create an AMI for Auto Scaling from the existing Web Server.
 - [X] Create a Launch Template.
-- [X] Setup Auto Scaling that uses the launch template and deploys EC2 instances across private subnets. Attach ALB to the ASG Configure group size and target tracking scaling policy with CPU Utilization as the scaling metric. Add tags.
+- [X] Setup Auto Scaling that uses the launch template and deploys EC2 instances in Private Subnet 1 and Private Subnet 2. Attach Application Load Balancer to the Auto Scaling group. Configure group size and target tracking scaling policy with CPU Utilization as the scaling metric. Add tags.
 - [X] Update Web Server Security Group. Lock down EC2 instance’s Security Groups to only allow traffic from the Application Load Balancer.
 - [X] Test the Web Server by connecting to the load balancer.
 - [X] Test high availability by terminating one of the Web Server instances to simulate a failure.
