@@ -10,7 +10,7 @@
 
 ### Project date
 ------------------
-- Deployed via Management Console - TBC
+- Deployed via Management Console - 18 July 2023
 - Deployed via Terraform - TBC
 
 ### Tech Stack
@@ -31,14 +31,10 @@ This project explores the traditional technologies, especially focused on the ne
 ------------------
 
 Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
-Manually creating a new Virtual Private Cloud (VPC) that spans two availability zones, setting the foundation for a resilient infrastructure. Also creating NAT gateways in both public subnets ensuring high availability and fault tolerance.
-
 - [Blog](https://awstip.com/traditional-web-hosting-on-aws-3d2f1fc4524a)
 - [Lab](https://www.youtube.com/watch?v=wdHhvifXs14&t=1200s)
 
 Part 2: Creating a Scalable & Highly Available Environment for a Web Server
-Leverage Load Balancing and Automatic Scaling To further enhance the availability and scalability of the Web Server.
-
 - [Blog](https://blog.digitalden.cloud/traditional-web-hosting-on-aws-part-2-creating-a-scalable-and-highly-available-environment-for-4be7f9b7a0ba)
 - [Lab](https://youtu.be/c3BUa_5wSjE)
 
@@ -46,7 +42,7 @@ Leverage Load Balancing and Automatic Scaling To further enhance the availabilit
 -----------------
 
 ### Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
-
+Manually creating a new Virtual Private Cloud (VPC) that spans two availability zones, setting the foundation for a resilient infrastructure. Also creating NAT gateways in both public subnets ensuring high availability and fault tolerance.
 
 ![Part 1 Architecture](images/part1-architecture.png)
 
@@ -61,6 +57,7 @@ Leverage Load Balancing and Automatic Scaling To further enhance the availabilit
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
 ### Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
+Leverage Load Balancing and Automatic Scaling To further enhance the availability and scalability of the Web Server.
 
 - [X] Create an Application Load Balancer in WebServer VPC in Public Subnets 1 and Public Subnet 2. Configure a security group for load balancer allowing HTTP & HTTPS traffic. Create a target group with health check settings and configure the HTTP listener on port 80 to forward incoming traffic to the target group.
 
