@@ -45,9 +45,9 @@ Part 2: Creating a Scalable & Highly Available Environment for a Web Server
 
 Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets Manager
 - [Blog](https://blog.digitalden.cloud/traditional-web-hosting-on-aws-part-3-building-robust-security-with-amazon-cloudfront-aws-waf-74b2f60bcc94)
-- [Lab](hhttps://youtu.be/ujBARGA3224)
+- [Lab](https://youtu.be/ujBARGA3224)
 
-Part 4: Monitoring & Logging (Coming Soon)
+Part 4: Monitoring & Logging (Coming Soon)<br>
 Part 5: Terraform whole Environment (Coming Soon)
 
 ### Objectives
