@@ -21,11 +21,16 @@
 - Amazon Route 53
 - Auto Scaling
 
-### Project Description
+### Overview of the Series
 -----------------
-Many companies utilize a number of traditional technologies within AWS to deliver applications, most of which are less managed than the serverless technologies. These include Elastic Cloud Compute (EC2), which provides virtual machines in AWS, and Virtual Private Cloud (VPC), which provides virtual networking constructs in AWS.
 
-This project explores the traditional technologies, especially focused on the networking stacks within AWS.
+In today’s digital landscape, many companies rely on a combination of traditional and Serverless technologies within Amazon Web Services (AWS) to deliver robust and scalable applications. While Serverless technologies offer enhanced manageability, traditional technologies such as Elastic Cloud Compute (EC2) and Virtual Private Cloud (VPC) still play a vital role.
+
+In this multi-part series, you will cover important aspects of hosting a traditional web application on AWS. From laying the foundation with a resilient Virtual Private Cloud to creating a highly available and dynamically scalable environment with the Application Load Balancer, Launch Templates, and Auto Scaling groups.
+
+Moving forward you will enhance the security and optimise the performance of your application infrastructure. Advanced strategies for monitoring and logging will be at your disposal, ensuring the health and functionality of your environment
+
+Lastly, you will Terraform the whole environment, learning how to provision and manage your entire web hosting environment using code, enhancing reproducibility and scalability:
 
 ### More Information
 ------------------
@@ -38,11 +43,18 @@ Part 2: Creating a Scalable & Highly Available Environment for a Web Server
 - [Blog](https://blog.digitalden.cloud/traditional-web-hosting-on-aws-part-2-creating-a-scalable-and-highly-available-environment-for-4be7f9b7a0ba)
 - [Lab](https://youtu.be/c3BUa_5wSjE)
 
+Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets Manager
+- [Blog](https://blog.digitalden.cloud/traditional-web-hosting-on-aws-part-3-building-robust-security-with-amazon-cloudfront-aws-waf-74b2f60bcc94)
+- [Lab](hhttps://youtu.be/ujBARGA3224)
+
+Part 4: Monitoring & Logging (Coming Soon)
+Part 5: Terraform whole Environment (Coming Soon)
+
 ### Objectives
 -----------------
 
 ### Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
-Manually creating a new Virtual Private Cloud (VPC) that spans two availability zones, setting the foundation for a resilient infrastructure. Also creating NAT gateways in both public subnets ensuring high availability and fault tolerance.
+The first part of this series is all about establishing a resilient Virtual Private Cloud (VPC), which serves as the core of my infrastructure. Ensuring the high availability of critical business systems is paramount in the AWS environment. Manually created a new Virtual Private Cloud (VPC) that spanned two availability zones, setting the foundation for a resilient infrastructure.
 
 ![Part 1 Architecture](images/part1-architecture.png)
 
@@ -56,8 +68,11 @@ Manually creating a new Virtual Private Cloud (VPC) that spans two availability 
 - [X] Launch a Web Server EC2 Instance in the Public Subnet to test VPC is configured correctly.
 - [X] Confirm that the Web Server EC2 instance can be accessed from the internet.
 
-### Part 2: Load Balancing and Automatic Scaling To further enhance the availability and scalability of my Web Server
-Leverage Load Balancing and Automatic Scaling To further enhance the availability and scalability of the Web Server.
+### Part 2: Creating a Scalable & Highly Available Environment for a Web Server
+In the second instalment I focused on scalability and high availability. I configured an Application Load Balancer to distribute incoming traffic across instances, enhancing system resilience. A launch template streamlined the instance deployment process through an Auto Scaling group, providing control and flexibility. By implementing a secure two-tier architecture and appropriate security group configurations, I ensured robust security. The high availability of my Web Server was thoroughly tested and demonstrated, including its performance under stress conditions.
+
+
+![Part 2 Architecture](images/part2-architecture.png)
 
 - [X] Create an Application Load Balancer in WebServer VPC in Public Subnets 1 and Public Subnet 2. Configure a security group for load balancer allowing HTTP & HTTPS traffic. Create a target group with health check settings and configure the HTTP listener on port 80 to forward incoming traffic to the target group.
 
@@ -74,3 +89,18 @@ Leverage Load Balancing and Automatic Scaling To further enhance the availabilit
 - [x] Connect to an EC2 Instance in a Private Subnet using EC2 Instance Connect Endpoint. Open port 22 in instance's security group. Create the endpoint in the VPC console, and connect to instance in the private subnet using the EC2 console with the endpoint.
 
 - [X] Test automatic scaling under load. Perform a 10 minute stress test on Web Server instance. During the test, observe the EC2 console to see the Auto Scaling group deploy new instances, up to a maximum of 6. After the stress test, the ASG scales down as needed, maintaining the desired capacity of 2 instances.
+
+### Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets Manager
+In this instalment I enhanced the security and optimised the performance of my application infrastructure.
+
+
+![Part 3 Architecture](images/part3-architecture.png)
+
+- [X] Secured HTTPS Setup with ACM Certificates for your Application Load Balancer and CloudFront.
+- [X] Setting Up CloudFront Distribution with Application Load Balancer Origin, HTTPS, CNAME, Custom SSL Certificate, and Custom Headers.
+- [X] Domain Integration with CloudFront Distribution using the CLI.
+- [X] Reviewed AWS Web Application Firewall Integration with CloudFront
+- [X] Configured a WAF ACL, Associated with you Application Load Balancer and Create an X-Origin Verification Rule.
+- [X] Automated Secret Rotation for X-Origin-Verify Header Value using AWS Secrets Manager.
+- [X] Configured a Lambda Function for Secret Rotation and Resource Management.
+- [X] Reviewed Security Configurations.
