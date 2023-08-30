@@ -1,0 +1,49 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams"
+            ],
+            "Resource": "arn:aws:logs:eu-west-2:223791342103:log-group:/aws/lambda/OriginSecretRotateFunction:*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:PutSecretValue",
+                "secretsmanager:UpdateSecretVersionStage"
+            ],
+            "Resource": "arn:aws:secretsmanager:eu-west-2:223791342103:secret:OriginValidationSecret-rOhUDy",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "secretsmanager:GetRandomPassword"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "cloudfront:GetDistribution",
+                "cloudfront:GetDistributionConfig",
+                "cloudfront:ListDistributions",
+                "cloudfront:UpdateDistribution"
+            ],
+            "Resource": "arn:aws:cloudfront::223791342103:distribution/EATVFQ5QPS89",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "wafv2:*"
+            ],
+            "Resource": "arn:aws:wafv2:eu-west-2:223791342103:regional/webacl/OriginVerifyACL/37c26a4d-87da-4d33-8d8f-ff5d672d6f02",
+            "Effect": "Allow"
+        }
+    ]
+}
