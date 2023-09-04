@@ -1,6 +1,6 @@
 <br />
 
-![Architecture Diagram](images/part2-architecture.png)
+![Architecture Diagram](Website/images/part2-architecture.png)
   <h1 align="center">Traditional-Web-Hosting-On-AWS</h1>
   <p align="center">
     <br />
@@ -15,22 +15,18 @@
 
 ### Tech Stack
 ------------------
-- Amazon EC2
-- Amazon VPC
-- Application Load Balancer
-- Amazon Route 53
-- Auto Scaling
+
 
 ### Overview of the Series
 -----------------
 
 In today’s digital landscape, many companies rely on a combination of traditional and Serverless technologies within Amazon Web Services (AWS) to deliver robust and scalable applications. While Serverless technologies offer enhanced manageability, traditional technologies such as Elastic Cloud Compute (EC2) and Virtual Private Cloud (VPC) still play a vital role.
 
-In this multi-part series, you will cover important aspects of hosting a traditional web application on AWS. From laying the foundation with a resilient Virtual Private Cloud to creating a highly available and dynamically scalable environment with the Application Load Balancer, Launch Templates, and Auto Scaling groups.
+In this multi-part series, I cover important aspects of hosting a traditional web application on AWS. From laying the foundation with a resilient Virtual Private Cloud to creating a highly available and dynamically scalable environment with the Application Load Balancer, Launch Templates, and Auto Scaling groups.
 
-Moving forward you will enhance the security and optimise the performance of your application infrastructure. Advanced strategies for monitoring and logging will be at your disposal, ensuring the health and functionality of your environment
+Moving forward I enhanced the security and optimised the performance of my application infrastructure. Advanced strategies for monitoring and logging are at my disposal, ensuring the health and functionality of my environment
 
-Lastly, you will Terraform the whole environment, learning how to provision and manage your entire web hosting environment using code, enhancing reproducibility and scalability:
+Lastly, I will Terraform the whole environment, learning how to provision and manage my entire web hosting environment using code, enhancing reproducibility and scalability.
 
 ### More Information
 ------------------
@@ -47,16 +43,23 @@ Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets M
 - [Blog](https://blog.digitalden.cloud/traditional-web-hosting-on-aws-part-3-building-robust-security-with-amazon-cloudfront-aws-waf-74b2f60bcc94)
 - [Lab](https://youtu.be/ujBARGA3224)
 
-Part 4: Monitoring & Logging (Coming Soon)<br>
+Part 4: Monitoring, Security, Compliance with Amazon CloudWatch, VPC Endpoints & AWS Config
+- [Blog](https://awstip.com/traditional-web-hosting-on-aws-part-4-monitoring-security-compliance-with-cloudwatch-54121210dcd84)
+- [Lab](https://www.youtube.com/watch?v=uEqJL4En_wc)
+
 Part 5: Terraform whole Environment (Coming Soon)
 
 ### Objectives
 -----------------
 
 ### Part 1: Deploy a Highly Available Virtual Private Cloud (VPC)
-The first part of this series is all about establishing a resilient Virtual Private Cloud (VPC), which serves as the core of my infrastructure. Ensuring the high availability of critical business systems is paramount in the AWS environment. Manually created a new Virtual Private Cloud (VPC) that spanned two availability zones, setting the foundation for a resilient infrastructure.
+The first part of this series is all about establishing a resilient Virtual Private Cloud (VPC), which serves as the core of my infrastructure. Ensuring the high availability of critical business systems is paramount in the AWS environment. Manually created a new Virtual Private Cloud (VPC), defined its IP range, and established public and private subnets across multiple Availability Zones for security and availability.
 
-![Part 1 Architecture](images/part1-architecture.png)
+Configured an Internet Gateway for secure external access, explored NAT Gateways for private instance security, set up Route Tables for seamless VPC communication, created Security Groups to control traffic.
+
+Finally, deployed a web server in the public subnet, ensuring its accessibility marking a successful VPC setup.
+
+![Part 1 Architecture](Website/images/part1-architecture.png)
 
 - [X] Create Public and Private Subnets in two Availability Zones.
 - [X] Create an Internet Gateway and attach to VPC.
@@ -72,7 +75,7 @@ The first part of this series is all about establishing a resilient Virtual Priv
 In the second instalment I focused on scalability and high availability. I configured an Application Load Balancer to distribute incoming traffic across instances, enhancing system resilience. A launch template streamlined the instance deployment process through an Auto Scaling group, providing control and flexibility. By implementing a secure two-tier architecture and appropriate security group configurations, I ensured robust security. The high availability of my Web Server was thoroughly tested and demonstrated, including its performance under stress conditions.
 
 
-![Part 2 Architecture](images/part2-architecture.png)
+![Part 2 Architecture](Website/images/part2-architecture.png)
 
 - [X] Create an Application Load Balancer in WebServer VPC in Public Subnets 1 and Public Subnet 2. Configure a security group for load balancer allowing HTTP & HTTPS traffic. Create a target group with health check settings and configure the HTTP listener on port 80 to forward incoming traffic to the target group.
 
@@ -91,10 +94,11 @@ In the second instalment I focused on scalability and high availability. I confi
 - [X] Test automatic scaling under load. Perform a 10 minute stress test on Web Server instance. During the test, observe the EC2 console to see the Auto Scaling group deploy new instances, up to a maximum of 6. After the stress test, the ASG scales down as needed, maintaining the desired capacity of 2 instances.
 
 ### Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets Manager
-In this instalment I enhanced the security and optimised the performance of my application infrastructure.
+In this instalment I enhanced the security and optimised the performance of my application infrastructure. I began by securing HTTPS with ACM Certificates for both ALB and CloudFront. I set up CloudFront with ALB Origin, HTTPS, CNAME, Custom SSL, and Headers.
 
+Seamlessly integrated my domain with CloudFront using the CLI. Enhanced security with a WAF ACL and X-Origin Verification Rule for ALB. Automated Secret Rotation for X-Origin-Verify Header Value using AWS Secrets Manager. Finally, configured a Lambda Function for Secret Rotation and resource management in my AWS environment.
 
-![Part 3 Architecture](images/part3-architecture.png)
+![Part 3 Architecture](Website/images/part3-architecture.png)
 
 - [X] Secured HTTPS Setup with ACM Certificates for your Application Load Balancer and CloudFront.
 - [X] Setting Up CloudFront Distribution with Application Load Balancer Origin, HTTPS, CNAME, Custom SSL Certificate, and Custom Headers.
@@ -104,3 +108,18 @@ In this instalment I enhanced the security and optimised the performance of my a
 - [X] Automated Secret Rotation for X-Origin-Verify Header Value using AWS Secrets Manager.
 - [X] Configured a Lambda Function for Secret Rotation and Resource Management.
 - [X] Reviewed Security Configurations.
+
+### Part 3: Building Robust Security with Amazon CloudFront, AWS WAF & AWS Secrets Manager
+In this instalment, I enhanced the security of my AWS infrastructure by configuring VPC Endpoints for AWS Systems Manager and CloudWatch Logs. These endpoints enabled private communication within my VPC, reducing exposure to the public internet. I Enhanced my monitoring capabilities by installing and configuring the CloudWatch Agent on Amazon EC2 instances using the AWS Systems Manager Run Command. 
+
+Additionally, I monitored logs and metrics, set up real-time notifications, enhanced security with AWS CloudTrail, and managed infrastructure compliance using AWS Config for robust AWS infrastructure management
+
+![Part 4 Architecture](Website/images/part4-architecture.png)
+
+- [X] Create VPC Endpoints to use AWS Systems Manager (SSM) & CloudWatch Logs.
+- [X] Use AWS Systems Manager Run Command to install the CloudWatch Agent on Amazon EC2 instances.
+- [X] Monitor Application Logs using CloudWatch Agent and CloudWatch Logs.
+- [X] Monitor system metrics using CloudWatch Agent and CloudWatch Metrics.
+- [X] Create and Review Real-Time Notifications with CloudWatch Events.
+- [X] Set up AWS CloudTrail for detailed logging of AWS API activity.
+- [X] Ensure Infrastructure Compliance using AWS Config.
