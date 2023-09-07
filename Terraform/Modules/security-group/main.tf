@@ -9,7 +9,7 @@ resource "aws_security_group" "alb_security_group" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = [0.0.0.0/0]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -17,14 +17,14 @@ resource "aws_security_group" "alb_security_group" {
     from_port        = 443
     to_port          = 443
     protocol         = "tcp"
-    cidr_blocks      = [0.0.0.0/0]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = -1
-    cidr_blocks      = [0.0.0.0/0]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   tags   = {
@@ -51,18 +51,18 @@ resource "aws_security_group" "web_server_security_group" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    security_groups  = [0.0.0.0/0]
+    cidr_blocks   = ["0.0.0.0/0"]
   }
 
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = -1
-    cidr_blocks      = [0.0.0.0/0]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   tags   = {
-    Name = WebServer Security Group
+    Name = "WebServer Security Group"
   }
 }
 
@@ -77,17 +77,17 @@ resource "aws_security_group" "vpc_endpoints_security_group" {
     from_port        = 443
     to_port          = 443
     protocol         = "tcp"
-    cidr_blocks      = [10.1.0.0/16]
+    cidr_blocks      = ["10.1.0.0/16"]
   }
 
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = -1
-    cidr_blocks      = [0.0.0.0/0]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   tags   = {
-    Name = VPC Endpoints Security Group
+    Name = "VPC Endpoints Security Group"
   }
 }
