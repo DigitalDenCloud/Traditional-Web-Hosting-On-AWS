@@ -4,6 +4,7 @@ terraform {
     bucket         = "digitalden-terraform-remote-state"
     key            = "terraform-module/traditional-web-hosting-on-aws/terraform.tfstate"
     region         = "eu-west-2"
+    profile        = "terraform-user"
     dynamodb_table = "terraform-state-lock"
   }
 }
