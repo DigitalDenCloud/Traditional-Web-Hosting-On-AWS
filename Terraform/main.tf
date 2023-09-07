@@ -27,6 +27,12 @@ module nat-gateway {
   private_subnet_az2_id       = module.vpc.private_subnet_az2_id
 }
 
+# create security groups
+module security_group{
+  source                      = "./modules/security_group"
+  vpc_id                      = module.vpc.vpc_id
+}
+
 # create application load balancer
 module application_load_balancer {
   source                      = "./modules/application_load_balancer"
